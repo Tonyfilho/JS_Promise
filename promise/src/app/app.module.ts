@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PromiseComponent } from './promise/promise.component';
+import { PromiseConceitosBasicoComponent } from './promise_conceitos_basicos/promise_conceitos_basicos.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PromiseComponent
+    PromiseConceitosBasicoComponent
   ],
   imports: [
     BrowserModule
