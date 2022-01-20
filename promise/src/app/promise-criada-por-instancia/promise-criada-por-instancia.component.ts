@@ -70,7 +70,18 @@ export class PromiseCriadaPorInstanciaComponent implements OnInit {
      */
      pegaCep('01001000').then(data => { console.log(`1º DATA do FETCH devolve o Body que tb é JSON, por isto 
       que temos que subscrever novamente em outra PROMISE data2 para recebermos o BODY`),
-    data.json().then(dataBody => console.log(dataBody))})
+    data.json().then(dataBody => {console.log(dataBody, dataBody.cep) })});
+
+    /**
+     * Chamando a Função e encadiando THEN 
+     */
+
+    pegaCep(29072180).then(data => {
+      return data.json(); /**como Json(), retorna outra PROMISE, podemos dar um RETURN e fazer
+      outro subscrição*/
+    }).then(dataBody => {
+      console.log('Cep vindo da FUNÇÃO encadiada, endereço da Localidade de: ',dataBody.localidade)
+    }).catch(error => console.error('Caso haja erro nos RESOLVES o CATCH estará aqui para lançar o ERROR', error))
   }
 
 }
